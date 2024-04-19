@@ -1,3 +1,5 @@
+import datetime as dt
+
 def exibir_poema(data_extenso, *args, **kwargs):
     texto = "\n".join(args)
     meta_dados = "\n".join([f"{chave.title()}: {valor}" for chave, valor in kwargs.items()])
@@ -5,7 +7,7 @@ def exibir_poema(data_extenso, *args, **kwargs):
     print(mensagem)
 
 
-exibir_poema(
+exibir_poema(dt.date.today().strftime("%A, %d %B %Y"),
     "Zen of Python",
     "Beautiful is better than ugly.",
     "Explicit is better than implicit.",
